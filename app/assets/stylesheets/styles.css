@@ -1,0 +1,441 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
+
+#title {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255,255,255,0);
+    z-index: 4;
+    cursor: default;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    z-index: 3;
+    background-color: rgba(255,255,255,1);
+    border-bottom: 1px solid lightgray;
+    transition: all .5s;
+    opacity: 1;
+}
+
+#header.hidden{
+    opacity: 0;
+}
+
+#header .buttonContainer {
+    padding: 7px;
+    font-size: 19pt;
+    font-weight: 100;
+    float: right;
+    height: 19px;
+    line-height: 19px;
+    position: absolute;
+    right: 25px;
+    top: 0;
+    cursor: pointer;
+}
+
+#header .buttonContainer .fa {
+    margin-left: 5px;
+    color: #444;
+}
+
+#header .buttonContainer .fa:hover {
+    margin-left: 5px;
+    color: #111;
+}
+
+#header .buttonContainer .fa#searchButton {
+    font-size: 16pt;
+}
+
+#header .buttonContainer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+#search {
+    position: fixed;
+    top: 40px;
+    right: 70px;
+    width: 500px;
+    background-color: white;
+    z-index: 2;
+    opacity: 1;
+    transition: all .5s;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 7px 1px gray;
+}
+
+#search.hidden {
+    top: -100%;
+    opacity: 0;
+}
+
+#search label {
+    font-size: 8pt
+}
+
+#search table {
+    width: 100%;
+}
+
+#search table tr.section {
+    margin-bottom: 20px;
+}
+
+#search table tr.section:last-child {
+    padding-bottom: 0;
+}
+
+#search table tr.section td.sectionTitle {
+    width: 30%;
+    text-align: right;
+    padding-right: 3%;
+    margin-right: 3%;
+    border-right: 10px solid #eee;
+}
+
+#search table tr.section td.sectionContent {
+    padding-left: 3%;
+    width: 64%;
+}
+
+#search table tr.section td.sectionContent .subsection {
+    margin-bottom: 10px;
+}
+
+#search table tr.section td.sectionContent .inputWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#search table tr.section td.sectionContent .inputWrapper.half {
+    width: 47%;
+    margin-right: 4%;
+}
+
+#search table tr.section td.sectionContent .inputWrapper.half:last-child {
+    margin-right: 0;
+}
+
+#search table tr.section td.sectionContent .inputWrapper label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+#search table tr.section td.sectionContent .inputWrapper input {
+    margin-top: 17px;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+}
+
+#search .buttonContainer {
+    border-top: 1px solid lightgray;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+#search .buttonContainer button {
+    float: right;
+    background-color: white;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 11pt;
+    padding: 10px;
+    border: 1px solid #007fd4;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all .25s;
+    cursor: pointer;
+}
+
+#search .buttonContainer button:hover {
+    background-color: #007fd4;
+    color: white;
+}
+
+#content {
+    width: 300px;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+    border-right: 1px solid lightgray;
+    transition: left .5s;
+    color: rgba(0,0,0.9);
+    padding-top: 20px;
+    cursor: default;
+}
+
+#content:after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    height: attr(data-height);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), color-stop(100%, rgba(0,0,0,0.25)));
+    background: -webkit-linear-gradient(left, transparent 0, rgba(0,0,0,0.25) 100%);
+    background: linear-gradient(to right, transparent 0, rgba(0,0,0,0.25) 100%);
+    opacity: .2;
+}
+
+#content .block {
+    width: 90%;
+    border-bottom: 10px solid #eee;
+    margin: 0 auto 25px;
+    padding-bottom: 20px;
+}
+
+#content .block:last-child {
+    border: 0;
+}
+
+#content #aggregated {
+
+}
+
+#content .section {
+
+}
+
+#content .section:after {
+
+}
+
+#content .section h1 {
+    font-size: 80pt;
+}
+
+#content .section h4 {
+    font-weight: 400;
+    font-size: 10pt;
+}
+
+#content .section table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 10px auto;
+    font-size: 11pt;
+}
+
+#content .section td {
+    border-bottom: 1px solid lightgray;
+    padding: 8px 0;
+}
+
+#content .section td:last-child {
+    text-align: right;
+}
+
+#content #aggregate td:last-child {
+    width: 20%;
+}
+
+#content .section tr:last-child  td{
+    border-bottom: 0;
+}
+
+#content .incident {
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 0 15px;
+    margin: 20px 0 0 0;
+    position: relative;
+}
+
+#content .incident:first-of-type {
+    margin-top: 20px;
+}
+
+#content .incident:hover, #content .incident.hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+#content .incident.selected {
+    background-color: #C7D2FF;
+}
+
+#content .incident:before {
+    content: " ";
+    width: 10px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#content .incident.arrest:before {
+    background-color: #D6756E;
+}
+
+#content .incident.offense:before {
+    background-color: #509B6C;
+}
+
+#content .incident .timestamp {
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding: 5px 0 5px 5px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 10pt;
+    border-bottom: 1px solid lightgray;
+    color: #444;
+}
+
+#content .incident h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    border-bottom: 1px dashed gray;
+    padding: 0 0 10px 0;
+    margin: 0 25px 10px 0;
+    line-height: 1.375em;
+}
+
+#content .incident h1:last {
+
+}
+
+#content .incident .info {
+    margin: 0 5px 0 0;
+}
+
+#content .incident .info table {
+    margin: 0;
+}
+
+#content .incident .info table tr {
+    margin: 10px 0;
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+#content .incident .info table tr:first-child {
+    margin-top: 0;
+}
+
+#content .incident .info table tr:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+
+#content .incident .info table tr td {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+#content .incident .info table tr td:first-child {
+    width: 30px;
+}
+
+#content .incident .info .fa {
+    font-size: 15pt;
+    margin: 0 0 0 5px;
+}
+
+#content .incident .info h2 {
+    padding: 0;
+    font-size: 10pt;
+    font-weight: 400;
+    text-align: left;
+    margin: 0 0 5px;
+}
+
+#content .incident .info h2:last-child {
+    margin-bottom: 0;
+}
+
+#content.hidden{
+    left: -300px;
+    opacity: 0;
+}
+
+#about {
+    position: fixed;
+    top: 40px;
+    right: 13px;
+    width: 500px;
+    z-index: 1;
+    color: black;
+    opacity: 1;
+    background-color: white;
+    transition: all .5s;
+    padding:15px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 7px 1px gray;
+}
+
+#about.hidden{
+    top: -100%;
+    opacity: 0;
+}
+
+#about h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.skrollable {
+    /*
+     * First-level skrollables are positioned relative to window
+     */
+    position: fixed;
+    z-index: 100;
+    width: 300px;
+}

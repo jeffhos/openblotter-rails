@@ -1,0 +1,93 @@
+<h3 id="title">openblotter</h3>
+<div id="header" class="hidden">
+  <div class="buttonContainer">
+    <i class="fa fa-search"></i>
+    <a href="https://github.com/jeffhos/pgh-crime-blotter" target="_blank">
+      <i class="fa fa-github"></i>
+    </a>
+    <i class="fa fa-info-circle"></i>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<div id="search" class="popout hidden">
+  <form>
+    <table>
+      <tr class="section" id="date">
+        <td class="sectionTitle">
+          <h4>Date range</h4>
+        </td>
+        <td class="sectionContent">
+          <div class="subsection">
+            <div class="inputWrapper half">
+              <label for="startdate">Start date</label>
+              <input type="date" name="startdate" id="startdate">
+            </div>
+
+            <div class="inputWrapper half">
+              <label for="enddate">End date</label>
+              <input type="date" name="enddate" id="enddate">
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr class="section" id="time">
+        <td class="sectionTitle">
+          <h4>Time of day</h4>
+        </td>
+        <td class="sectionContent">
+          <div class="subsection">
+            <div class="inputWrapper half">
+              <label for="starttime">Start time</label>
+              <input type="time" name="starttime" id="starttime">
+            </div>
+
+            <div class="inputWrapper half">
+              <label for="endtime">End time</label>
+              <input type="time" name="endtime" id="endtime">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="buttonContainer">
+      <button>Search</button>
+    </div>
+  </form>
+</div>
+
+<%# "About" popup %>
+<div id="about" class="popout hidden">
+  <h1>openblotter <span style="font-weight:100">an open pittsburgh project</span></h1>
+  <p>I scrape <a href="http://communitysafety.pittsburghpa.gov/Blotter.aspx">Pittsburgh Bureau of
+    Police logs</a> every morning and display criminal incidents.</p>
+  <p>I strive to provide the best analysis of the city's data, but I'm limited to the accuracy of
+    the contents and the number of incidents provided by the police. It is important that any
+    decisions based on this data be confirmed using additional resources.</p>
+  <p>As the city says, <em>"The City of Pittsburgh has provided this information as a service. The
+    City assumes no responsibility for the use of information posted on this site."</em>
+  <p>Blame Tim Condello, <a href="https://twitter.com/mhowe0422" target="_blank">Mark Howe</a>,
+    <a href="https://twitter.com/andrewmcgill" target="_blank">Andrew McGill</a>,
+    <a href="https://twitter.com/catskul" target="_blank">Andy Somerville</a> and
+    <a href="https://twitter.com/openpgh" target="_blank">Open Pittsburgh</a> for creating me.</p>
+</div>
+
+<%# Sidebar %>
+<div id="content" class="hidden">
+  <div class="section" id="data">
+    <div class="block">
+      <h4 class="center uppercase">Total incidents</h4>
+      <h1 class="center" id="total_incidents"></h1>
+    </div>
+
+    <div class="block" id="aggregate">
+      <h4 class="center uppercase" style="margin-top:20px;">Top incidents</h4>
+      <table></table>
+    </div>
+
+    <div class="block" id="incident_list" style="width:auto">
+      <h4 class="center uppercase">All incidents</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+asset 'leaflet'
+asset 'jquery'
+asset 'jquery-waypoints'
+asset 'skrollr'
+asset 'fontawesome'
+asset 'leaflet.markercluster'
+asset 'jquery.scrollTo'
+asset 'jquery-ui'
