@@ -6,4 +6,6 @@
 //= require leaflet.markercluster/dist/leaflet.markercluster
 //= require jquery.scrollTo/jquery.scrollTo.js
 //= require jquery-ui
+//= require angular
+//= require angular-resource
 //= require_tree .
